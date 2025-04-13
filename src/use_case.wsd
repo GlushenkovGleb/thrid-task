@@ -1,0 +1,33 @@
+@startuml
+left to right direction
+
+actor "Уборщик" as Employee
+actor "Менеджер" as Manager
+actor "Администратор" as Admin
+actor "Клиент" as Client
+actor "Telegram Bot" as Bot
+
+rectangle "Система учета" {
+  usecase "Сканировать QR-код" as UC1
+  usecase "Просмотреть статистику" as UC2
+  usecase "Сформировать отчет" as UC3
+  usecase "Анализировать качество" as UC4
+  usecase "Управление сотрудниками" as UC5
+  usecase "Управление помещениями" as UC6
+  usecase "Оставить отзыв" as UC7
+  usecase "Фиксация уборки" as UC8
+  usecase "Расчет зарплаты" as UC9
+}
+
+Employee --> UC1
+Employee --> UC2
+Manager --> UC3
+Manager --> UC4
+Admin --> UC5
+Admin --> UC6
+Client --> UC7
+Bot --> UC8
+Bot --> UC1
+UC8 --> UC9
+
+@enduml
